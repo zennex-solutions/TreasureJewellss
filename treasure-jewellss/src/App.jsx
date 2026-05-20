@@ -6,9 +6,14 @@ import Gifting from "./pages/Gifting"
 import BestSellers from "./pages/BestSellers"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
+import Navbarsec from "./components/Navbarsec"
+import SingleProductPage from "./pages/SingleProductPage"
+import CartPage from "./pages/CartPage"
+import OrderSuccessPage from "./pages/OrderSuccessPage"
 
 function App() {
-  return (
+  return (<>
+    <Navbarsec />
     <Routes>
 
       <Route path="/" element={<Home />} />
@@ -19,7 +24,7 @@ function App() {
       />
 
       <Route
-        path="/gifting"
+        path="/gifting"                             
         element={<Gifting />}
       />
 
@@ -37,8 +42,25 @@ function App() {
         path="/contact"
         element={<Contact />}
       />
+<Route
+        path="/SingleProductPage"
+        element={<SingleProductPage />}
+      />
+      <Route
+        path="/cartPage"
+        element={<CartPage />}
+      />
 
+      <Route
+        path="/cartPage"
+        element={<CartPage />}
+      />
+      <Route
+        path="/success"
+        element={<OrderSuccessPage />}
+      />
     </Routes>
+    </>
   )
 }
 
