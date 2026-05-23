@@ -20,10 +20,12 @@ function App() {
 
       <Route path="/" element={<Home />} />
 
-      <Route
+      {/* <Route
         path="/collections"
         element={<Collection />}
-      />
+      /> */}
+
+      <Route path="/collection" element={<Collection />} />
 
       <Route
         path="/gifting"                             
@@ -49,14 +51,11 @@ function App() {
         element={<SingleProductPage />}
       />
       <Route
-        path="/cartPage"
+        path="/cart"
         element={<CartPage />}
       />
 
-      <Route
-        path="/cartPage"
-        element={<CartPage />}
-      />
+     
       <Route
         path="/success"
         element={<OrderSuccessPage />}
