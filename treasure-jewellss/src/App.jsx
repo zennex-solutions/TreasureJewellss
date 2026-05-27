@@ -12,6 +12,14 @@ import CartPage from "./pages/CartPage"
 import OrderSuccessPage from "./pages/OrderSuccessPage"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
+import AdminLayout from "./admin/AdminLayout";
+import Dashboard from "./admin/pages/Dashboard";
+import Products from "./admin/pages/Products";
+import AddProduct from "./admin/pages/AddProduct";
+import EditProduct from "./admin/pages/EditProduct";
+import Orders from "./admin/pages/Orders";
+import AdminLogin from "./admin/pages/AdminLogin";
+import Footer from "./components/Footer"
 
 function App() {
   return (<>
@@ -68,7 +76,15 @@ function App() {
         path="/register"
         element={<Register />}
       />
+{/* Admin Routes */}
+      <Route path="/admin" element={<AdminLayout><Dashboard /></AdminLayout>} />
+<Route path="/admin/products" element={<AdminLayout><Products /></AdminLayout>} />
+<Route path="/admin/add-product" element={<AdminLayout><AddProduct /></AdminLayout>} />
+<Route path="/admin/edit-product/:id" element={<AdminLayout><EditProduct /></AdminLayout>} />
+<Route path="/admin/orders" element={<AdminLayout><Orders /></AdminLayout>} />
+<Route path="/admin-login" element={<AdminLayout><AdminLogin /></AdminLayout>} />
     </Routes>
+    <Footer />
     </>
   )
 }

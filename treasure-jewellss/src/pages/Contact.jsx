@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { FiPhone, FiMail, FiMapPin, FiClock } from "react-icons/fi";
 
-/* ─── Google Fonts ─── */
-const fontLink = document.createElement("link");
-fontLink.rel = "stylesheet";
-fontLink.href =
-  "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap";
-document.head.appendChild(fontLink);
-
 /* ─── Inline styles / keyframes ─── */
 const css = `
   *{box-sizing:border-box;margin:0;padding:0}
@@ -24,7 +17,6 @@ const css = `
   body{background:var(--cream);color:var(--text)}
 
   .contact-root{
-    font-family:'Jost',sans-serif;
     background:var(--cream);
     min-height:100vh;
     overflow-x:hidden;
@@ -50,13 +42,12 @@ const css = `
     text-align:center;padding:0 1rem;
   }
   .banner-eyebrow{
-    font-family:'Jost',sans-serif;
+
     letter-spacing:.35em;font-size:.7rem;font-weight:400;
     color:var(--gold-light);text-transform:uppercase;
     margin-bottom:.9rem;
   }
   .banner-title{
-    font-family:'Cormorant Garamond',serif;
     font-size:clamp(2.4rem,6vw,4.2rem);font-weight:300;
     color:#fff;line-height:1.1;
     text-shadow:0 2px 24px rgba(0,0,0,.4);
@@ -68,7 +59,7 @@ const css = `
     margin:1.2rem auto .8rem;
   }
   .banner-sub{
-    font-family:'Jost',sans-serif;font-size:.85rem;font-weight:300;
+    font-size:.85rem;font-weight:300;
     color:rgba(255,255,255,.75);letter-spacing:.1em;
   }
 
@@ -104,13 +95,12 @@ const css = `
   .info-col{display:flex;flex-direction:column;gap:1.6rem}
 
   .section-label{
-    font-family:'Jost',sans-serif;
     letter-spacing:.3em;font-size:.65rem;font-weight:500;
     color:var(--gold);text-transform:uppercase;
     margin-bottom:.3rem;
   }
   .section-title{
-    font-family:'Cormorant Garamond',serif;
+
     font-size:1.9rem;font-weight:300;color:var(--dark);
     line-height:1.2;
   }
@@ -134,7 +124,6 @@ const css = `
   .store-card:hover::before{opacity:1}
 
   .store-name{
-    font-family:'Cormorant Garamond',serif;
     font-size:1.3rem;font-weight:600;
     color:var(--dark);margin-bottom:1.1rem;
     display:flex;align-items:center;gap:.7rem;
@@ -165,7 +154,6 @@ const css = `
     line-height:1;
   }
   .timing-title{
-    font-family:'Cormorant Garamond',serif;
     font-size:1.2rem;font-weight:400;color:var(--gold-light);
     margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;
   }
@@ -195,7 +183,6 @@ const css = `
   }
   .form-header{margin-bottom:2.5rem}
   .form-title{
-    font-family:'Cormorant Garamond',serif;
     font-size:2rem;font-weight:300;color:var(--dark);
     margin-bottom:.4rem;
   }
@@ -212,7 +199,7 @@ const css = `
     width:100%;background:transparent;
     border:none;border-bottom:1px solid #ddd;
     padding:.6rem 0 .7rem;
-    font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300;
+    font-size:.9rem;font-weight:300;
     color:var(--dark);outline:none;
     transition:border-color .3s;
     -webkit-appearance:none;
@@ -238,7 +225,7 @@ const css = `
     border:1px solid rgba(201,168,76,.4);
     background:transparent;
     padding:.3rem .9rem;border-radius:2px;
-    font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;
+    font-size:.72rem;font-weight:400;
     letter-spacing:.06em;color:var(--muted);cursor:pointer;
     transition:all .2s;
   }
@@ -251,7 +238,7 @@ const css = `
     background:var(--dark);color:var(--gold-light);
     border:none;border-radius:2px;
     padding:1.05rem 2rem;
-    font-family:'Jost',sans-serif;font-size:.78rem;
+    font-size:.78rem;
     font-weight:500;letter-spacing:.25em;text-transform:uppercase;
     cursor:pointer;
     position:relative;overflow:hidden;
@@ -279,7 +266,7 @@ const css = `
   .success-diamond span{transform:rotate(-45deg);color:#fff;font-size:1.1rem}
   @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(201,168,76,.4)}50%{box-shadow:0 0 0 12px rgba(201,168,76,0)}}
   .success-title{
-    font-family:'Cormorant Garamond',serif;font-size:1.6rem;
+    font-size:1.6rem;
     font-weight:400;color:var(--dark);
   }
   .success-text{font-size:.82rem;color:var(--muted);font-weight:300}
@@ -316,24 +303,11 @@ const css = `
   }
   .map-label-dot{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
   .map-label span{
-    font-family:'Cormorant Garamond',serif;
     font-size:1rem;font-weight:400;color:var(--gold-light);letter-spacing:.08em;
   }
   .map-wrap iframe{
     width:100%;height:280px;border:none;display:block;
     filter:grayscale(.3) sepia(.1);
-  }
-
-  /* ── Footer bar ── */
-  .contact-footer{
-    background:var(--dark);
-    border-top:1px solid rgba(201,168,76,.15);
-    padding:1.8rem;
-    text-align:center;
-    font-size:.72rem;letter-spacing:.15em;
-    color:rgba(255,255,255,.25);
-    font-family:'Jost',sans-serif;font-weight:300;
-    text-transform:uppercase;
   }
 
   /* animations */
@@ -376,7 +350,7 @@ const Contact = () => {
             alt="jewellery banner"
           />
           <div className="banner-overlay">
-            <p className="banner-eyebrow">Aditi Jewels — Contact</p>
+            <p className="banner-eyebrow">Treasure Jewells — Contact</p>
             <h1 className="banner-title">We'd Love to <em>Hear</em> from You</h1>
             <div className="banner-divider" />
             <p className="banner-sub">Handcrafted imitation jewellery, made with love</p>
@@ -520,9 +494,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="contact-footer">
-          © 2025 Aditi Jewels — Handcrafted with ◆ Passion
-        </div>
+       
 
       </div>
     </>
