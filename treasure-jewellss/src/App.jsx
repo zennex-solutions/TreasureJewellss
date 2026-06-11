@@ -20,6 +20,7 @@ import EditProduct from "./admin/pages/EditProduct";
 import Orders from "./admin/pages/Orders";
 import AdminLogin from "./admin/pages/AdminLogin";
 import Footer from "./components/Footer"
+import Accounts from "./pages/Accounts"
 
 function App() {
   return (<>
@@ -74,7 +75,10 @@ function App() {
       />
        <Route
         path="/register"
-        element={<Register />}
+        element={<Register />}/>
+         <Route
+        path="/account"
+        element={<Accounts  />}
       />
 {/* Admin Routes */}
       <Route path="/admin" element={<AdminLayout><Dashboard /></AdminLayout>} />

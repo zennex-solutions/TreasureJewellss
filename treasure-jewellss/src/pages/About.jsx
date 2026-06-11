@@ -439,31 +439,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* ── MEET THE TEAM ── */}
-      <section style={{ padding: "120px 24px", background: "#1a1a18", position: "relative", overflow: "hidden" }}>
-        <div className="noise-overlay" />
-        <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <FadeIn>
-            <div style={{ textAlign: "center", marginBottom: "72px" }}>
-              <div className="section-label" style={{ marginBottom: "16px" }}>The People Behind</div>
-              <h2 style={{ fontSize: "clamp(36px, 4vw, 56px)", fontWeight: 300, color: "#FAFAF7" }}>Meet Our Team</h2>
-            </div>
-          </FadeIn>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "32px" }}>
-            {team.map((m, i) => (
-              <FadeIn key={i} delay={i * 0.15}>
-                <div className="team-card" style={{ textAlign: "center", cursor: "default" }}>
-                  <div style={{ width: "140px", height: "140px", borderRadius: "50%", background: "linear-gradient(135deg, #3a3020, #2a2418)", border: "1px solid rgba(196,154,46,0.3)", margin: "0 auto 28px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <span style={{ fontSize: "28px", fontWeight: 300, color: "#C49A2E", letterSpacing: "1px" }}>{m.initials}</span>
-                  </div>
-                  <h3 style={{ fontSize: "22px", fontWeight: 400, color: "#FAFAF7", marginBottom: "8px" }}>{m.name}</h3>
-                  <p style={{ fontSize: "12px", letterSpacing: "2px", textTransform: "uppercase", color: "#C49A2E", fontWeight: 400 }}>{m.role}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* ── CTA BANNER ── */}
       <section style={{ padding: "120px 24px", background: "#F4F0E8", textAlign: "center" }}>
